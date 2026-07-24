@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "coupon_id"}))
 public class CouponIssue {
 
     @Id
@@ -25,4 +26,14 @@ public class CouponIssue {
     private Coupon coupon;
 
     private LocalDateTime issuedAt;
+
+    private CouponIssue(User user, Coupon coupon) {
+        this.user = user;
+        this.coupon = coupon;
+        this.issuedAt = LocalDateTime.now();
+    }
+
+    public static CouponIssue issue(User user, Coupon coupon) {
+        return new CouponIssue(user, coupon);
+    }
 }

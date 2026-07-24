@@ -28,4 +28,11 @@ public class User {
     private Role role;
 
     private LocalDateTime createdAt;
+
+    // 테스트용
+    public User(String email, String name) {
+        this.email = email;
+        this.name = name;
+        this.createdAt = LocalDateTime.now();
+    }
 }
