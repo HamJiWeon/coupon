@@ -7,6 +7,6 @@ export const options = {
 };
 
 export default function () {
-    const userId = Math.floor(Math.random() * 50) + 1; // 1~50 랜덤
+    const userId = Math.floor(Math.random() * 5000) + 1; // 1~5000 랜덤
     http.post(`http://localhost:8080/coupons/1/issue?userId=${userId}`);
 }

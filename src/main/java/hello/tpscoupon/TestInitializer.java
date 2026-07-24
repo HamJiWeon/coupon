@@ -20,13 +20,13 @@ public class TestInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        for (int i = 1; i <= 50; i++) {
+        for (int i = 1; i <= 5000; i++) {
             userRepository.save(new User("user" + i + "@example.com", "user" + i));
         }
 
         couponRepository.save(new Coupon(
                 "HikariCP Test Coupon",
-                1000,
+                5000,
                 LocalDateTime.now(),
                 LocalDateTime.now().plusDays(1)
         ));
