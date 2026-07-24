@@ -25,8 +25,8 @@ public class TestInitializer implements CommandLineRunner {
         }
 
         couponRepository.save(new Coupon(
-                "선착순 3명",
-                3,
+                "HikariCP Test Coupon",
+                1000,
                 LocalDateTime.now(),
                 LocalDateTime.now().plusDays(1)
         ));
