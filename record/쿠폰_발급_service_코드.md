@@ -1,6 +1,7 @@
 ## 쿠폰 발급
 
-​```java
+​
+```
 public void issue(Long couponId, Long userId) {
     User user = userRepository.findById(userId)
             .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 유저입니다."));
@@ -15,7 +16,8 @@ public void issue(Long couponId, Long userId) {
         throw new IllegalStateException("이미 발급받은 쿠폰입니다.");
     }
 }
-​```
+```
+​
 
 ### 처리 순서
 
